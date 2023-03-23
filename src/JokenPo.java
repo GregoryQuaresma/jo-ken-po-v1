@@ -6,7 +6,6 @@ public record JokenPo(
     Player IA,
     int rounds
 ) {
-
     public void toPlay(){
         System.out.println("\n******* Seja BEM-VINDO(A), " + user.getName() + " *******\n");
 
@@ -29,7 +28,6 @@ public record JokenPo(
         }
 
     }
-
     public void showFinalResult() {
         System.out.println("\n****************************************\n");
 
@@ -46,7 +44,6 @@ public record JokenPo(
         }
         System.out.println("\n****************************************\n");
     }
-
     private void winnerRound(int result) {
         String winnerRound;
         if (result == 0) {
@@ -62,12 +59,10 @@ public record JokenPo(
         }
         System.out.println("\nVencedor do Round: " + winnerRound + "\n");
     }
-
     private int choiceIA(){
         Random random = new Random();
         return random.nextInt(3) + 1;
     }
-
     private int choiceUser(){
         Scanner scan = new Scanner(System.in);
         System.out.println("1 = PEDRA ");
@@ -78,5 +73,4 @@ public record JokenPo(
 
         return scan.nextInt();
     }
-
 }

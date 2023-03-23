@@ -16,7 +16,6 @@ public class Main {
 
         return new JokenPo(user, IA, rounds);
     }
-
     public static void main(String[] args) {
         JokenPo jokenPo = startGame();
         jokenPo.toPlay();

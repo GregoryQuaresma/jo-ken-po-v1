@@ -34,26 +34,26 @@ public record JokenPo(
         System.out.println("\n****************************************\n");
 
         int finalUserScore = user.getScore();
-        int finalIaScore = IA.getScore();
+        int finalIAScore = IA.getScore();
 
         System.out.println("\n\tPLACAR FINAL: " + user.getName() + " " + user.getScore() + " X " + IA.getScore() + " " + IA.getName());
 
-        if(finalUserScore == finalIaScore) {
+        if (finalIAScore == finalUserScore) {
             System.out.println("\t\t\tEMPATE!");
-        }else {
-            String finalWinner = (finalUserScore > finalIaScore) ? user.getName() : IA.getName();
-
+        } else {
+            String finalWinner = (finalIAScore > finalUserScore) ? IA.getName() : user.getName();
             System.out.println("\t\tVENCEDOR = " + finalWinner.toUpperCase());
         }
-
         System.out.println("\n****************************************\n");
     }
+
     private void winnerRound(int result) {
         String winnerRound;
         if (result == 0) {
             winnerRound = "Empate!";
         } else {
             if (result == -1 || result == 2) {
+                IA.incrementScore();
                 winnerRound = IA().getName();
             } else {
                 user.incrementScore();
